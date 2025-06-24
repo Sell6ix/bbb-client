@@ -1,0 +1,18 @@
+<h2>New Admin Application</h2>
+    <form (ngSubmit)="submit()" #form="ngForm">
+      <label>
+        Target User:
+        <input name="targetUser" [(ngModel)]="targetUser" required />
+      </label>
+      <br />
+      <label>
+        Type:
+        <select name="type" [(ngModel)]="type" required>
+          <option [ngValue]="'MEMBER'">Member</option>
+          <option [ngValue]="'ADMIN'">Admin</option>
+        </select>
+      </label>
+      <br />
+      <button type="submit" [disabled]="form.invalid">Create</button>
+      <button type="button" (click)="close()">Cancel</button>
+    </form>

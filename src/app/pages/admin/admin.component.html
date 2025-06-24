@@ -1,0 +1,32 @@
+<!-- admin.component.html -->
+<div class="container">
+  <button mat-button color="primary" [routerLink]="['/home']" class="back-button">
+    ← Back to Home
+  </button>
+
+  <h1 class="title">Admin Panel</h1>
+
+  <div class="status-filter">
+    <label for="status-filter">Filter by status:</label>
+    <select id="status-filter" (change)="onStatusFilterChange($event)" [value]="selectedStatus()">
+      <option value="">All</option>
+      <option value="PENDING">Pending</option>
+      <option value="WAITING_VOTES">Waiting for votes</option>
+      <option value="WAITING_UNANIMOUS">Waiting for unanimous</option>
+      <option value="APPROVED">Approved</option>
+      <option value="CANCELLED">Cancelled</option>
+    </select>
+  </div>
+
+  <div class="apps-container">
+    <ng-container *ngFor="let app of allApplications">
+  <app-application-card
+    [app]="app"
+    [canVote]="canVote(app)"
+    [canUnvote]="canUnvote(app)"
+    (refreshed)="refresh()">
+  </app-application-card>
+</ng-container>
+
+  </div>
+</div>

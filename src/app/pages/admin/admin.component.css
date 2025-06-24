@@ -1,0 +1,118 @@
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  color: #222;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.back-button {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: none;
+  color: #1976d2;
+}
+.back-button:hover {
+  color: #1565c0;
+}
+
+.title {
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #0d47a1;
+  text-align: center;
+}
+
+.new-admin-btn {
+  display: block;
+  margin: 0 auto 30px;
+  width: 220px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th.mat-header-cell {
+  background-color: #1976d2;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 10px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #1565c0;
+}
+
+td.mat-cell {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #222;
+}
+
+tr.mat-row:hover {
+  background-color: #e3f2fd;
+}
+
+button.mat-button {
+  margin-right: 8px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+button.mat-button[color="primary"] {
+  color: #1976d2;
+}
+
+button.mat-button[color="warn"] {
+  color: #d32f2f;
+}
+
+button.mat-button:last-child {
+  margin-right: 0;
+}
+
+.status-filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  gap: 12px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.status-filter label {
+  font-weight: 600;
+  color: #0d47a1;
+}
+
+.status-filter select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1.5px solid #1976d2;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: white;
+  color: #222;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.status-filter select:hover,
+.status-filter select:focus {
+  border-color: #1565c0;
+  outline: none;
+}

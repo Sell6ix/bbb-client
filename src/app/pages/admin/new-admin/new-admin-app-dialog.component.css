@@ -1,0 +1,77 @@
+:host {
+  display: block;
+  padding: 24px;
+  background: #1e1e1e;
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #64b5f6aa;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #90caf9;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #b3e5fc;
+}
+
+input, select {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2c2c2c;
+  color: #eee;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 6px #64b5f6aa;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+  background-color: #1976d2;
+  color: #fff;
+  box-shadow: 0 4px 12px #64b5f6cc;
+}
+
+button[type="submit"]:hover {
+  background-color: #1565c0;
+}
+
+button[type="button"] {
+  background-color: #555;
+  color: #eee;
+}
+
+button[type="button"]:hover {
+  background-color: #777;
+}

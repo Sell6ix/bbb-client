@@ -1,0 +1,52 @@
+.container {
+      max-width: 480px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #1976d2aa;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .back-button {
+      align-self: flex-start;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #1565c0;
+      text-transform: none;
+    }
+
+    .back-button:hover {
+      color: #0d47a1;
+    }
+
+    .title {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #1565c0;
+    }
+
+    .score {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .tap-button {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      box-shadow: 0 6px 16px #f4433611;
+      font-size: 1.1rem;
+      font-weight: 700;
+      user-select: none;
+      background-color: #d32f2f;
+      color: white;
+    }

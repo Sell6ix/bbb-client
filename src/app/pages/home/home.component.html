@@ -1,0 +1,67 @@
+<div class="container">
+<header class="header">
+  <img [src]="avatarUrl()" alt="avatar" class="avatar" />
+  <h2 class="welcome">Hey, {{ user()?.username }}!</h2>
+  <span class="spacer"></span>
+    <button (click)="logout()" class="logout-btn" matTooltip="Logout">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
+  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+  <polyline points="16 17 21 12 16 7"/>
+  <line x1="21" y1="12" x2="9" y2="12"/>
+</svg>
+  </button>
+</header>
+
+
+  <ng-container *ngIf="loadingTarget(); else targetedList">
+    <p>Loading applications submitted for you…</p>
+  </ng-container>
+  <ng-template #targetedList>
+    <section *ngIf="user()?.role === 'BRO' && targeted().length" class="section applications-for-you">
+      <h3>Applications submitted for you</h3>
+      <app-application-card
+        *ngFor="let app of targeted()"
+        [app]="app"
+        [isSubmitter]="false">
+      </app-application-card>
+    </section>
+  </ng-template>
+
+  <section *ngIf="loadingMine()" class="loading-section">
+    <mat-spinner diameter="36"></mat-spinner>
+    <p>Loading your submitted applications...</p>
+  </section>
+
+  <section *ngIf="!loadingMine() && user()?.role !== 'BRO'" class="section your-applications">
+    <h3>Your submitted applications</h3>
+    <app-application-card
+      *ngFor="let app of mine()"
+      [app]="app"
+      [isSubmitter]="true"
+      (removed)="onRemoved(app.id)"
+      (refreshed)="refresh()">
+    </app-application-card>
+<div class="fab-container">
+  <button class="create-icon-btn" (click)="openNewApplication(selectedAppType)">
+    <svg viewBox="0 0 24 24" class="plus-icon" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="none"/>
+      <line x1="12" y1="7" x2="12" y2="17" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <line x1="7" y1="12" x2="17" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span>Create</span>
+  </button>
+</div>
+  </section>
+
+  <section *ngIf="pendingMember()" class="pending-card">
+    Pending member application #{{ pendingMember()?.id }}
+  </section>
+  <section *ngIf="pendingAdmin()" class="pending-card">
+    Pending admin application #{{ pendingAdmin()?.id }}
+  </section>
+
+  <nav class="nav-links">
+    <a *ngIf="auth.isAdmin()" routerLink="/admin" class="nav-link">Admin Panel</a>
+    <a *ngIf="auth.isMember() || auth.isAdmin()" routerLink="/minigame" class="nav-link">Minigame</a>
+  </nav>
+</div>

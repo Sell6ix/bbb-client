@@ -1,0 +1,18 @@
+<mat-card class="app-card" [style.backgroundColor]="cardColor">
+      <mat-card-title>Application #{{ app.id }}</mat-card-title>
+
+      <mat-card-content>
+        <p>Submitted: {{ app.createdAt | date : 'short' }}</p>
+        <p>👤 Candidate: {{ app.targetUser }}</p>
+        <p>📤 Submitted by: {{ submitterDisplay }}</p>
+        <p>🗳️ Votes: {{ votesDisplay }}</p>
+        <p>📂 Type: {{ app.type | titlecase }}</p>
+        <p>📊 Status: {{ statusLabel || '❌ not computed' }}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button color="primary" *ngIf="canVote" (click)="vote()">Vote</button>
+        <button mat-button color="primary" *ngIf="canUnvote" (click)="unvote()">Unvote</button>
+        <button mat-button color="warn" *ngIf="isSubmitter" (click)="remove()">🗑 Delete</button>
+      </mat-card-actions>
+    </mat-card>

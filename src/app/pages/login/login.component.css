@@ -1,0 +1,56 @@
+
+    .login-box {
+  max-width: 360px;
+  margin: 100px auto;
+  padding: 32px 24px;
+  background: #f5f9ff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #90caf9aa;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  text-align: center;
+}
+
+.login-box h1 {
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  color: #1976d2;
+  font-size: 2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button.mat-raised-button {
+  background-color: #1976d2;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px #64b5f6cc;
+  transition: background-color 0.3s ease;
+}
+
+button.mat-raised-button:hover {
+  background-color: #1565c0;
+}
+
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #1976d2;
+  border-color: #1976d2;
+}
+
+.mat-input-element {
+  color: #222;
+  font-weight: 500;
+}
+
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+  border-color: #1565c0;
+}
