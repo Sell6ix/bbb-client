@@ -7,12 +7,15 @@
       <br />
       <label>
         Type:
-        <select name="type" [(ngModel)]="type" required>
-          <option [ngValue]="'MEMBER'">Member</option>
-          <option [ngValue]="'ADMIN'">Admin</option>
-        </select>
+      <mat-button-toggle-group>
+        <mat-button-toggle value=MEMBER>Member</mat-button-toggle>
+        <mat-button-toggle value=ADMIN *ngIf="isAdmin">Admin</mat-button-toggle>
+      </mat-button-toggle-group>
       </label>
       <br />
       <button type="submit" [disabled]="form.invalid">Create</button>
       <button type="button" (click)="close()">Cancel</button>
+      <div *ngIf="errorMessage" style="color: red; margin-top: 10px;">
+    {{ errorMessage }}
+   </div>
     </form>

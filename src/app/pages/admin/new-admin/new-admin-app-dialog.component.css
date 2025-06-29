@@ -1,8 +1,8 @@
 :host {
   display: block;
   padding: 24px;
-  background: #1e1e1e;
-  color: #eee;
+  background: #f9f9f9;
+  color: #222;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 12px;
   box-shadow: 0 0 15px #64b5f6aa;
@@ -14,7 +14,7 @@ h2 {
   margin-top: 0;
   font-size: 1.6rem;
   font-weight: 700;
-  color: #90caf9;
+  color: #1565c0;
   text-align: center;
   margin-bottom: 24px;
 }
@@ -29,7 +29,7 @@ label {
   display: flex;
   flex-direction: column;
   font-weight: 600;
-  color: #b3e5fc;
+  color: #1565c0;
 }
 
 input, select {
@@ -37,14 +37,14 @@ input, select {
   padding: 10px 12px;
   border: none;
   border-radius: 6px;
-  background: #2c2c2c;
-  color: #eee;
+  background: #f9f9f9;
+  color: #222;
   font-size: 1rem;
 }
 
 input:focus, select:focus {
   outline: none;
-  box-shadow: 0 0 6px #64b5f6aa;
+  box-shadow: 0 0 6px #1565c0;
 }
 
 button {

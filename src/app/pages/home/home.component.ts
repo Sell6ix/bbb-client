@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { ApplicationCardComponent } from '../../components/application-card/application-card.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { NewApplicationDialogComponent } from '../../components/new-application-dialog/new-application-dialog.component'; 
 import { Router, RouterModule } from '@angular/router';
 import { ApiService } from '../../core/api.service';
 import { AuthService } from '../../core/auth.service';
@@ -14,6 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { NewAdminAppDialogComponent } from '../admin/new-admin/new-admin-app-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -99,7 +99,7 @@ export class HomeComponent {
   const currentUsername = this.user()?.username;
   if (!currentUsername) return;
 
-  const dialogRef = this.dialog.open(NewApplicationDialogComponent, {
+  const dialogRef = this.dialog.open(NewAdminAppDialogComponent, {
     data: { type, currentUser: currentUsername }
   });
 

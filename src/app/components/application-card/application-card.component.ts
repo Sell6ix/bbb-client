@@ -86,4 +86,8 @@ export class ApplicationCardComponent {
   }
 }
 
+get isFinal(): Boolean{
+  return this.app.status==='APPROVED' || this.app.status==='CANCELLED' 
+}
+
 }
