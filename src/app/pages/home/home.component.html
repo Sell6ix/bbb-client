@@ -25,6 +25,14 @@
         [isSubmitter]="false">
       </app-application-card>
     </section>
+    <section *ngIf="user()?.role === 'MEMBER' && targetedAdmin().length" class="section applications-for-you">
+  <h3>Admin applications submitted for you</h3>
+  <app-application-card
+    *ngFor="let app of targetedAdmin()"
+    [app]="app"
+    [isSubmitter]="false">
+  </app-application-card>
+</section>
   </ng-template>
 
   <section *ngIf="loadingMine()" class="loading-section">

@@ -5,7 +5,7 @@ export enum ApplicationStatus {
   WAITING_VOTES = 'WAITING_VOTES',
   WAITING_UNANIMOUS = 'WAITING_UNANIMOUS',
   APPROVED = 'APPROVED',
-  CANCELLED = 'CANCELLED',
+  DELETED = 'DELETED',
 }
 
 export interface Application {
@@ -16,4 +16,5 @@ export interface Application {
   status: ApplicationStatus; 
   submittedBy: string | { username:string };
   votes: string[];
+  votesRequired?: number;
 }

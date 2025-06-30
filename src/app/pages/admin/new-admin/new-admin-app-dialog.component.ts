@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../../core/api.service';
 import { AppType } from '../../../models/enums';
 import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
+import { AuthService } from '../../../core/auth.service';
 
 @Component({
   selector: 'app-new-admin-app-dialog',
@@ -16,14 +17,17 @@ import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-
 export class NewAdminAppDialogComponent {
   private api = inject(ApiService);
   private dialogRef = inject(MatDialogRef<NewAdminAppDialogComponent>);
+  public auth = inject(AuthService);
   currentUser!: string;
   errorMessage : string | null = null;
+  AppType = AppType;
 
   targetUser = '';
   type: AppType = AppType.MEMBER;
+  user = this.auth.user();
 
    isAdmin(): Boolean{
-    return this.type===AppType.ADMIN;
+    return this.user()?.role ===AppType.ADMIN;
   }
 
   submit() {
@@ -41,5 +45,3 @@ export class NewAdminAppDialogComponent {
     this.dialogRef.close();
   }
 }
-// git config --global user.email "egorovid2001@gmail.com "
-//   git config --global user.name "sell6ix"

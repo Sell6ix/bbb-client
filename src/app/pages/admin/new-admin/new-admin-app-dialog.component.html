@@ -7,10 +7,10 @@
       <br />
       <label>
         Type:
-      <mat-button-toggle-group>
-        <mat-button-toggle value=MEMBER>Member</mat-button-toggle>
-        <mat-button-toggle value=ADMIN *ngIf="isAdmin">Admin</mat-button-toggle>
-      </mat-button-toggle-group>
+        <mat-button-toggle-group [(ngModel)]="type" name="type">
+          <mat-button-toggle [value]="AppType.MEMBER">Member</mat-button-toggle>
+          <mat-button-toggle [value]="AppType.ADMIN" *ngIf="isAdmin()">Admin</mat-button-toggle>
+        </mat-button-toggle-group>
       </label>
       <br />
       <button type="submit" [disabled]="form.invalid">Create</button>

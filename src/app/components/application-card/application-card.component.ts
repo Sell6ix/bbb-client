@@ -1,5 +1,5 @@
 import { Component, Input, inject, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { ApiService } from '../../core/api.service';
@@ -11,7 +11,7 @@ import { ErrorService } from '../../services/error.service';
 @Component({
   selector: 'app-application-card',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, NgIf],
   templateUrl: './application-card.component.html',
   styleUrl: './application-card.component.css'
 })
@@ -60,7 +60,7 @@ export class ApplicationCardComponent {
       WAITING_UNANIMOUS: '⌛ Waiting for unanimous votes',
       WAITING_VOTES: '⌛ Waiting for votes',
       APPROVED: '✅ Approved',
-      CANCELLED: '❌ Cancelled',
+      DELETED: '❌ Deleted',
     }[this.app.status] ?? '⌛ Pending';
   }
 
@@ -75,7 +75,7 @@ export class ApplicationCardComponent {
   switch (this.app.status) {
     case 'APPROVED':
       return '#c8e6c9';
-    case 'CANCELLED':
+    case 'DELETED':
       return '#ffcdd2';
     case 'PENDING':
     case 'WAITING_VOTES':
@@ -87,7 +87,7 @@ export class ApplicationCardComponent {
 }
 
 get isFinal(): Boolean{
-  return this.app.status==='APPROVED' || this.app.status==='CANCELLED' 
+  return this.app.status==='APPROVED' || this.app.status==='DELETED' 
 }
 
 }

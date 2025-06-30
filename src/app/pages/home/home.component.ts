@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { ApplicationCardComponent } from '../../components/application-card/application-card.component';
@@ -50,9 +50,15 @@ export class HomeComponent {
 
   targeted = signal<Application[]>([]);
 
+  targetedAdmin = computed(() =>
+  this.user()?.role === 'MEMBER'
+    ? this.targeted().filter(a => a.type === AppType.ADMIN && a.targetUser === this.user()?.username)
+    : []
+);
+
   pendingMember = computed(() => {
     if (this.user()?.role !== 'BRO') return null;
-    return this.targeted().find((a) => a.targetUser === this.user()?.username && a.type === AppType.MEMBER);
+      return this.targeted().find((a) => a.targetUser === this.user()?.username && a.type === AppType.MEMBER);
   });
 
   pendingAdmin = computed(() => {
@@ -64,7 +70,12 @@ export class HomeComponent {
   isAdmin = computed(() => this.user()?.role === AppType.ADMIN);
 
   constructor() {
-    this.refresh();
+    effect(() => {
+      const currentUser = this.user();
+      if (currentUser?.username) {
+        this.refresh();
+      }
+    });
   }
 
   onRemoved(id: number) {
