@@ -4,6 +4,8 @@ Bro Brings Buddy is a web app for submitting and reviewing membership and admini
 
 ![Bro Brings Buddy login screen](docs/screenshots/login.png)
 
+![Admin panel with an application waiting for votes](docs/screenshots/admin.png)
+
 ## Tech stack
 
 - Angular 19 and TypeScript
@@ -13,7 +15,7 @@ Bro Brings Buddy is a web app for submitting and reviewing membership and admini
 
 ## Run locally
 
-Requirements: Node.js and npm, plus the `bbb-server` API running at `http://localhost:3000`.
+Requirements: Node.js and npm, plus the [bbb-server](https://github.com/Sell6ix/bbb-server) API running at `http://localhost:3000`.
 
 ```bash
 npm ci
