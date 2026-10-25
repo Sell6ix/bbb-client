@@ -1,37 +1,30 @@
-# BuddyClient
+# Bro Brings Buddy — web client
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Bro Brings Buddy is a web app for submitting and reviewing membership and administrator applications. Members can track their submissions, vote on applications addressed to them, and use the Buddy Clicker mini-game. Administrators can review all applications and manage their status.
 
-## Development server
+![Bro Brings Buddy login screen](docs/screenshots/login.png)
 
-To start a local development server, run:
+## Tech stack
 
-```bash
-ng serve
-```
+- Angular 19 and TypeScript
+- Angular Material and SCSS
+- RxJS
+- Karma and Jasmine for tests
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Run locally
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Requirements: Node.js and npm, plus the `bbb-server` API running at `http://localhost:3000`.
 
 ```bash
-ng generate --help
+npm ci
+npm start
 ```
 
-## Building
+Open `http://localhost:4200`. The development server proxies API requests to `http://localhost:3000` using `proxy.conf.json`.
 
-To build the project run:
+## Build and test
 
 ```bash
-ng build
+npm run build
+npm test
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes application for performance and speed.
